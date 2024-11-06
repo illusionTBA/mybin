@@ -60,6 +60,10 @@ app.get("/api/snippet", async ({ query: { id } }) => {
   return r[0];
 });
 
+app.get("/snippet", async ({ query: { id } }) => {
+  return Bun.file(`./dist/index.html`);
+});
+
 app.listen(3000);
 
 console.log(`App running at ${app.server?.url}`);
